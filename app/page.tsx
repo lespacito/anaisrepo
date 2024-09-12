@@ -1,7 +1,12 @@
+import { Layout } from "./ui/components/layout/Layout";
+import { HomePageContainer } from "./ui/modules/home-page/home-page.container";
+
 export default function Home() {
   return (
     <>
-      <h1>Hello word</h1>
+      <Layout isDisplayBreadcrumbs={false}>
+        <HomePageContainer />
+      </Layout>
     </>
   );
 }

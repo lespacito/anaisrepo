@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Infos de l'utilisateur",
 };
 
-export default function MonCompte() {
+export default function Connexion() {
   return (
     <>
       <Layout>

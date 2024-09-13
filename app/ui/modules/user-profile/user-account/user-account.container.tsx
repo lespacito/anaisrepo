@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/app/ui/design-system/button/Button";
+import { Button } from "../../../design-system/button/Button";
 export const UserAccountContainer = () => {
   return (
     <div>

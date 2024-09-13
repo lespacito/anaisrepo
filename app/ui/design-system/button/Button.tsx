@@ -72,7 +72,7 @@ export const Button = ({
       break;
     case "danger":
       variantStyles =
-        "bg-alert-dager hover:bg-alert-danger/75 text-white rounded";
+        "bg-alert-danger hover:bg-alert-danger/75 text-white rounded";
       break;
     case "ico":
       variantStyles = clsx(

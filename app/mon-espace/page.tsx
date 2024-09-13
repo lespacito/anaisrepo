@@ -1,4 +1,4 @@
-import { Layout } from "@/app/ui/components/layout/layout";
+import { Layout } from "../ui/components/layout/Layout";
 import type { Metadata } from "next";
 import { UserAccountContainer } from "../ui/modules/user-profile/user-account/user-account.container";
 

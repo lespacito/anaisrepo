@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/app/ui/design-system/button/Button";
 export const UserAccountContainer = () => {
   return (

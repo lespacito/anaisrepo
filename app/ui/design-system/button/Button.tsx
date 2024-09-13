@@ -12,7 +12,14 @@ interface IconProps {
 
 interface Props {
   size?: "small" | "medium" | "large";
-  variant?: "accent" | "primary" | "secondary" | "outline" | "disabled" | "ico";
+  variant?:
+    | "accent"
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "disabled"
+    | "danger"
+    | "ico";
   icon?: IconProps;
   iconTheme?: "accent" | "primary" | "secondary";
   iconPosition?: "left" | "right";
@@ -62,6 +69,10 @@ export const Button = ({
       break;
     case "outline":
       variantStyles = "border-buttonOutline text-primary border-2 rounded";
+      break;
+    case "danger":
+      variantStyles =
+        "bg-alert-dager hover:bg-alert-danger/75 text-white rounded";
       break;
     case "ico":
       variantStyles = clsx(

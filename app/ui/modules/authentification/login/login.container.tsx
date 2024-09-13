@@ -47,6 +47,7 @@ export const LoginContainer = () => {
     toast.success("Bienvenue sur CadeauAnais !");
     setIsLoading(false);
     router.push("/mon-espace");
+    reset;
   };
 
   const onSubmit: SubmitHandler<LoginFormFieldsType> = async (formData) => {

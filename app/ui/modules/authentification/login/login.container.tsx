@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation";
 export const LoginContainer = () => {
   const router = useRouter();
   const { value: isLoading, setValue: setIsLoading, toggle } = useToggle();
-  console.log(router);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -46,6 +45,8 @@ export const LoginContainer = () => {
       return;
     }
     toast.success("Bienvenue sur CadeauAnais !");
+    setIsLoading(false);
+    router.push("/mon-espace");
   };
 
   const onSubmit: SubmitHandler<LoginFormFieldsType> = async (formData) => {

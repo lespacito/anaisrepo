@@ -2,10 +2,13 @@ import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
 import { ActiveLink } from "./Active-link";
+import { useAuth } from "@/app/context/authUserContext";
 
 interface Props {}
 
 export const Navbar = ({}: Props) => {
+  const { authUser } = useAuth();
+  console.log('authUser', authUser)
   return (
     <div className="border-background border-b-2">
       <Container className="flex items-center justify-between py-1.5 gap-7">

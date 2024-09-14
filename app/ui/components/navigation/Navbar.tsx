@@ -1,4 +1,5 @@
 "use client";
+import { GUEST, REGISTERED } from "@/app/lib/session-status";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
@@ -35,19 +36,24 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/blog">Blog</ActiveLink>
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
-          <div className="flex items-center gap-1">
-            <Button size="small" variant="primary" baseUrl="/connexion">
-              Se connecter
-            </Button>
-            |
-            <Button
-              size="small"
-              variant="secondary"
-              baseUrl="/connexion/inscription"
-            >
-              Inscription
-            </Button>
-          </div>
+          <Layout sessionStatus={GUEST}>
+            <div className="flex items-center gap-1">
+              <Button size="small" variant="primary" baseUrl="/connexion">
+                Se connecter
+              </Button>
+              |
+              <Button
+                size="small"
+                variant="secondary"
+                baseUrl="/connexion/inscription"
+              >
+                Inscription
+              </Button>
+            </div>
+          </Layout>
+          <Layout sessionStatus={REGISTERED}>
+            <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
+          </Layout>
         </div>
       </Container>
     </div>

@@ -20,6 +20,9 @@ const firebaseConfig = {
 const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
 
 // Exportation de l'authentification Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+console.log("Firebase app initialized:", app);
+console.log("Auth instance:", auth);

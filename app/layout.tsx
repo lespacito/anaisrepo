@@ -2,7 +2,7 @@ import { Flip, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import { AuthUserProvider } from "@/app/context/authUserContext";
+import { AuthUserProvider } from "@/app/context/AuthUserContext";
 
 export const metadata: Metadata = {
   title: "Cadeau Anais",

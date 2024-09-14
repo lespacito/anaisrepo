@@ -2,7 +2,7 @@ import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
 import { ActiveLink } from "./Active-link";
-import { useAuth } from "@/app/context/authUserContext";
+import { useAuth } from "@/app/context/AuthUserContext";
 
 interface Props {}
 

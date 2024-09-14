@@ -1,7 +1,7 @@
 import { Container } from "@/app/ui/components/container/Container";
 import { Button } from "@/app/ui/design-system/button/Button";
 import { Typography } from "@/app/ui/design-system/typography/Typography";
-import { Image } from "next/image";
+import Image from "next/image";
 
 export const HeroTopView = () => {
   return (

@@ -8,7 +8,7 @@ export const firestoreUpdateDocument = async (
   data: object
 ) => {
   try {
-    const documentRef = doc(db, "cities", "DC");
+    const documentRef = doc(db, collectionName, documentID);
 
     await updateDoc(documentRef, data);
     return { data: true };

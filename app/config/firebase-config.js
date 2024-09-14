@@ -15,12 +15,8 @@ const firebaseConfig = {
 };
 
 // Initialisation de Firebase
-
-// Initialisation d'Analytics (si applicable)
-const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
-
 // Exportation de l'authentification Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 

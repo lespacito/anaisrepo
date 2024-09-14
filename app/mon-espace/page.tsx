@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Myspace() {
   return (
     <>
-      <Layout withSidebar>
+      <Layout withSidebar sessionStatus="registered">
         <UserAccountContainer />
       </Layout>
     </>

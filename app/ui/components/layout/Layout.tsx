@@ -2,12 +2,14 @@ import { Breadcrumbs } from "../breadcrumbs/breadcrumb";
 import { Container } from "../container/Container";
 import { Footer } from "../navigation/Footer";
 import { Navbar } from "../navigation/Navbar";
+import { Session } from "../session/session";
 import { UserAccountNavigation } from "@/app/ui/components/navigation/user-account-navigation";
 import { UserAccountContainer } from "@/app/ui/modules/user-profile/user-account/user-account.container";
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
   withSidebar?: boolean;
+  sessionStatus?: string;
 }
 
 export const Layout = ({
@@ -35,11 +37,11 @@ export const Layout = ({
   }
 
   return (
-    <div>
+    <Session sessionStatus={sessionStatus}>
       <Navbar />
       {isDisplayBreadcrumbs && <Breadcrumbs />}
       {view}
       <Footer />
-    </div>
+    </Session>
   );
 };

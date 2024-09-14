@@ -34,23 +34,19 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/blog">Blog</ActiveLink>
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
-          {!authUser ? (
-            <div className="flex items-center gap-1">
-              <Button size="small" variant="primary" baseUrl="/connexion">
-                Se connecter
-              </Button>
-              |
-              <Button
-                size="small"
-                variant="secondary"
-                baseUrl="/connexion/inscription"
-              >
-                Inscription
-              </Button>
-            </div>
-          ) : (
-            <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
-          )}
+          <div className="flex items-center gap-1">
+            <Button size="small" variant="primary" baseUrl="/connexion">
+              Se connecter
+            </Button>
+            |
+            <Button
+              size="small"
+              variant="secondary"
+              baseUrl="/connexion/inscription"
+            >
+              Inscription
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

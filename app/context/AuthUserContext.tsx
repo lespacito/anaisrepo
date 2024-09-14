@@ -10,6 +10,7 @@ interface Props {
 const init = {
   uid: "",
   email: "",
+  displayName: "",
   emailVerified: false,
   phoneNumber: "",
   userDocument: {} as UserDocument,

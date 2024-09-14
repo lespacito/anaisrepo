@@ -20,7 +20,7 @@ export const Session = ({ children, sessionStatus }: Props) => {
     }
   }
 
-  if (!authUserIsLoading) {
+  if (!authUserIsLoading && !sessionStatus) {
     return <>{children}</>;
   }
   return <ScreenSpinner />;

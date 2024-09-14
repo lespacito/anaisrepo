@@ -5,11 +5,12 @@ import { FirebaseError } from "firebase/app";
 export const firestoreUpdateDocument = async (
   collectionName: string,
   documentID: string,
-  data: any
+  data: object
 ) => {
   try {
     const documentRef = doc(db, "cities", "DC");
 
+    await updateDoc(documentRef, data);
     return { data: true };
   } catch (error) {
     const firebaseError = error as FirebaseError;

@@ -3,7 +3,7 @@ import { useAuth } from "@/app/context/AuthUserContext";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
-import { ActiveLink } from "./Active-link";
+import { Link } from "next/link";
 
 interface Props {}
 
@@ -15,7 +15,7 @@ export const Navbar = ({}: Props) => {
       <Button size="small" variant="primary" baseUrl="/connexion">
         Se connecter
       </Button>
-      ) | (
+      |
       <Button size="small" variant="secondary" baseUrl="/connexion/inscription">
         Inscription
       </Button>
@@ -51,7 +51,7 @@ export const Navbar = ({}: Props) => {
           authentificationSystem
         ) : (
           <>
-            <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
+            <Link href="/mon-espace" className="flex items-center gap-2">Mon espace</Link>
           </>
         )}
       </Container>

@@ -8,7 +8,7 @@ interface Props {}
 
 export const Navbar = ({}: Props) => {
   const { authUser } = useAuth();
-  console.log('authUser', authUser)
+  console.log("authUser", authUser);
   return (
     <div className="border-background border-b-2">
       <Container className="flex items-center justify-between py-1.5 gap-7">

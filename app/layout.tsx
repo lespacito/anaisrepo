@@ -2,7 +2,6 @@ import { Flip, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import { AuthUserProvider } from "@/app/context/AuthUserContext";
 
 export const metadata: Metadata = {
   title: "Cadeau Anais",
@@ -18,14 +17,12 @@ export default function RootLayout({
     <html lang="fr">
       <body className="min-h-screen">
         <main>
-          <AuthUserProvider>
-            <ToastContainer
-              position="top-center"
-              autoClose={8000}
-              transition={Flip}
-            />
-            {children}
-          </AuthUserProvider>
+          <ToastContainer
+            position="top-center"
+            autoClose={8000}
+            transition={Flip}
+          />
+          {children}
         </main>
       </body>
     </html>

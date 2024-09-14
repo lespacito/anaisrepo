@@ -52,9 +52,7 @@ export const Navbar = ({}: Props) => {
             authentificationSystem
           ) : (
             <>
-              <Link href="/mon-espace" className="flex items-center gap-2">
-                Mon espace
-              </Link>
+              
             </>
           )}
         </div>

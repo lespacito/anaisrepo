@@ -3,7 +3,7 @@ import { firebaseLogOutUser } from "@/app/api/authentication";
 import { Box } from "@/app/ui/design-system/box/box";
 import { toast } from "react-toastify";
 import { Button } from "@/app/ui/design-system/button/Button";
-import { Typography } from "@app/ui/design-system/typography/Typography";
+import { Typography } from "@/app/ui/design-system/typography/Typography";
 import { ActiveLink } from "./Active-link";
 
 export const UserAccountNavigation = () => {

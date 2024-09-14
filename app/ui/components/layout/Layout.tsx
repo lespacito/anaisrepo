@@ -3,6 +3,7 @@ import { Container } from "../container/Container";
 import { Footer } from "../navigation/Footer";
 import { Navbar } from "../navigation/Navbar";
 import { UserAccountNavigation } from "@/app/ui/components/navigation/user-account-navigation";
+import { UserAccountContainer } from "@/app/ui/modules/user-profile/user-account/user-account.container.tsx";
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
@@ -23,7 +24,9 @@ export const Layout = ({
           <div className="col-span-3">
             <UserAccountNavigation />
           </div>
-          <div className="col-span-9"></div>
+          <div className="col-span-9">
+            <UserAccountContainer />
+          </div>
         </div>
       </Container>
     );

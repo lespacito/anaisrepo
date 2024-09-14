@@ -3,8 +3,8 @@ import { useAuth } from "@/app/context/AuthUserContext";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
-import Link from "next/link";
 import { ActiveLink } from "./Active-link";
+import { AccountNavLinkProfil } from "@/app/ui/components/navigation/account-link-profil";
 
 interface Props {}
 
@@ -52,7 +52,7 @@ export const Navbar = ({}: Props) => {
             authentificationSystem
           ) : (
             <>
-              
+              <AccountNavLinkProfil />
             </>
           )}
         </div>

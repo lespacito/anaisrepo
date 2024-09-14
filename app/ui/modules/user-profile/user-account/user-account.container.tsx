@@ -1,5 +1,5 @@
 "use client";
-import { firebaseLogOutUser } from "@/app/api/authentification";
+import { firebaseLogOutUser } from "@/app/api/authentication";
 import { Button } from "@/app/ui/design-system/button/Button";
 import { toast } from "react-toastify";
 

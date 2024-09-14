@@ -2,7 +2,10 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { RegisterFormFieldsType } from "@/app/types/Forms";
 import { RegisterView } from "./register.view";
-import { firebaseCreateUser } from "@/app/api/authentication";
+import {
+  firebaseCreateUser,
+  sendEmailVerificationProcedure,
+} from "@/app/api/authentication";
 import { firestoreCreateeDocument } from "@/app/api/firestore";
 import { toast } from "react-toastify";
 import { useToggle } from "@/app/hooks/use-toggle";
@@ -35,6 +38,7 @@ export const RegisterContainer = () => {
     toast.success("Bienvenue sur le site, Merci de m'avoir fait confiance");
     setIsLoading(false);
     reset();
+    sendEmailVerificationProcedure();
   };
 
   const handleCreateUserAuthentification = async ({

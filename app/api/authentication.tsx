@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  sendEmailVerification,
 } from "firebase/auth";
 import { auth } from "@/app/config/firebase-config";
 import { FirebaseError } from "firebase/app";
@@ -60,5 +61,21 @@ export const sendEmailResetPassword = async (email: string) => {
     return {
       error: { code: firebaseError.code, message: firebaseError.message },
     };
+  }
+};
+
+export const sendEmailVerificationProcedure = async () => {
+  if (auth.currentUser) {
+    try {
+      await sendEmailVerification(auth.currentUser);
+      return { data: true };
+    } catch (error) {
+      const firebaseError = error as FirebaseError;
+      return {
+        error: { code: firebaseError.code, message: firebaseError.message },
+      };
+    }
+  }else{
+    error{code: "unknown", message: "Une erreur est survenue"}
   }
 };

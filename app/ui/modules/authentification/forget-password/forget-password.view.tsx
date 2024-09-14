@@ -18,7 +18,7 @@ export const ForgetPasswordView = ({ form }: Props) => {
           <div className="relative w-full h-[532px]">
             <Image
               fill
-              src={"/assets/img/bohnomme.png"}
+              src={"/assets/img/bohnomme.svg"}
               alt="bohnomme blanc"
               className="object-scale-down"
             />
@@ -34,7 +34,7 @@ export const ForgetPasswordView = ({ form }: Props) => {
                 <Link href="/connexion">Se connecter</Link>
               </Typography>
             </div>
-            <ForgotForm form={form}/>
+            <ForgotForm form={form} />
           </Box>
         </div>
       </Container>

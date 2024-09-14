@@ -18,7 +18,7 @@ export const RegisterView = ({ form }: Props) => {
           <div className="relative w-full h-[532px]">
             <Image
               fill
-              src={"/assets/img/bohnomme.png"}
+              src={"/assets/img/bohnomme.svg"}
               alt="bohnomme blanc"
               className="object-scale-down"
             />

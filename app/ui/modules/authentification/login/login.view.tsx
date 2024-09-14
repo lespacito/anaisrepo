@@ -18,7 +18,7 @@ export const LoginView = ({ form }: Props) => {
           <div className="relative w-full h-[532px]">
             <Image
               fill
-              src={"/assets/img/bohnomme.svg"}
+              src={"/assets/img/bohnommeConnexion.jpg"}
               alt="bohnomme blanc"
               className="object-scale-down"
             />

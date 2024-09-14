@@ -3,7 +3,7 @@ import { Container } from "../container/Container";
 import { Footer } from "../navigation/Footer";
 import { Navbar } from "../navigation/Navbar";
 import { UserAccountNavigation } from "@/app/ui/components/navigation/user-account-navigation";
-import { UserAccountContainer } from "@/app/ui/modules/user-profile/user-account/user-account.container.tsx";
+import { UserAccountContainer } from "@/app/ui/modules/user-profile/user-account/user-account.container";
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;

@@ -10,17 +10,17 @@ interface Props {}
 export const Navbar = ({}: Props) => {
   const { authUser } = useAuth();
 
-  const authentificationSystem = (
-    <div className="flex items-center gap-1">
+  const authentificationSystem =
+    (
       <Button size="small" variant="primary" baseUrl="/connexion">
         Se connecter
       </Button>
-      |
+    ) |
+    (
       <Button size="small" variant="secondary" baseUrl="/connexion/inscription">
         Inscription
       </Button>
-    </div>
-  );
+    );
 
   return (
     <div className="border-background border-b-2">
@@ -47,11 +47,13 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
         </div>
-        {!authUser ? (
-          authentificationSystem
-        ) : (
-          <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
-        )}
+        <div className="flex items-center gap-1">
+          {!authUser ? (
+            authentificationSystem
+          ) : (
+            <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
+          )}
+        </div>
       </Container>
     </div>
   );

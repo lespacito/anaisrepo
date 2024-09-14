@@ -5,11 +5,13 @@ import { Navbar } from "../navigation/Navbar";
 import { Session } from "../session/session";
 import { UserAccountNavigation } from "@/app/ui/components/navigation/user-account-navigation";
 import { UserAccountContainer } from "@/app/ui/modules/user-profile/user-account/user-account.container";
+import { SessionStatusTyype } from "@/app/types/SessionStatusTypes";
+
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
   withSidebar?: boolean;
-  sessionStatus?: string;
+  sessionStatus?: SessionStatusTyype;
 }
 
 export const Layout = ({

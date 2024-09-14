@@ -2,6 +2,7 @@
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
+import { Layout } from "../layout/Layout";
 import { ActiveLink } from "./Active-link";
 import { useAuth } from "@/app/context/AuthUserContext";
 
@@ -34,7 +35,6 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/blog">Blog</ActiveLink>
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
-          {sessionStorage === "registered"}(
           <div className="flex items-center gap-1">
             <Button size="small" variant="primary" baseUrl="/connexion">
               Se connecter
@@ -48,7 +48,6 @@ export const Navbar = ({}: Props) => {
               Inscription
             </Button>
           </div>
-          ) : ( "Salut l'ami" )
         </div>
       </Container>
     </div>

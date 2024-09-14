@@ -22,7 +22,7 @@ export const Session = ({ children, sessionStatus }: Props) => {
       !authUserIsLoading &&
       authUser &&
       !onboardingIsCompleted &&
-      pathname !== "/onboarding"
+      pathname !== "/mon-espace/onboarding"
     );
   };
 
@@ -31,7 +31,7 @@ export const Session = ({ children, sessionStatus }: Props) => {
       !authUserIsLoading &&
       authUser &&
       onboardingIsCompleted &&
-      pathname === "/onboarding"
+      pathname === "/mon-espace/onboarding"
     );
   };
 

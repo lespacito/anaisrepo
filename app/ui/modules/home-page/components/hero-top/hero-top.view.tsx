@@ -18,7 +18,7 @@ export const HeroTopView = () => {
         </div>
       </div>
       <Image
-        src="/assets/img/karting.jpg"
+        src="/assets/img/karting.png"
         width={811}
         height={596}
         className="absolute top-0 right-0 z-0"

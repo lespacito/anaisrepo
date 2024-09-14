@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { RegisterFormFieldsType } from "@/app/types/Forms";
 import { RegisterView } from "./register.view";
 import { firebaseCreateUser } from "@/app/api/authentication";
-import { firestoreUpdateDocument } from "@/app/api/firestore.tsx";
+import { firestoreUpdateDocument } from "@/app/api/firestore";
 import { toast } from "react-toastify";
 import { useToggle } from "@/app/hooks/use-toggle";
 

@@ -1,6 +1,7 @@
 import { Container } from "@/app/ui/components/container/Container";
 import { Button } from "@/app/ui/design-system/button/Button";
 import { Typography } from "@/app/ui/design-system/typography/Typography";
+import { Image } from "next/image";
 
 export const HeroTopView = () => {
   return (
@@ -16,6 +17,12 @@ export const HeroTopView = () => {
           <Button baseUrl="/blog">Découvrir le blog</Button>
         </div>
       </div>
+      <Image
+        src="/assets/img/karting.jpg"
+        width={811}
+        height={596}
+        className="absolute top-0 right-0 z-0"
+      />
     </Container>
   );
 };

@@ -22,6 +22,7 @@ export const HeroTopView = () => {
         width={811}
         height={596}
         className="absolute top-0 right-0 z-0"
+        alt="Image de karting hero-top"
       />
     </Container>
   );

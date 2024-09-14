@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";

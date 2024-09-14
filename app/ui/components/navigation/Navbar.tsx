@@ -3,7 +3,7 @@ import { useAuth } from "@/app/context/AuthUserContext";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
-import { Link } from "next/link";
+import Link from "next/link";
 import { ActiveLink } from "./Active-link";
 
 interface Props {}

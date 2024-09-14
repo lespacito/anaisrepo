@@ -42,8 +42,8 @@ export default function useFirebaseAuth() {
   };
 
   useEffect(() => {
-    const onsubscribe = onAuthStateChanged(auth, authStateChanged);
-    return () => onsubscribe();
+    const unsubscribe = onAuthStateChanged(auth, authStateChanged);
+    return () => unsubscribe();
   }, []);
 
   return {

@@ -75,7 +75,7 @@ export const sendEmailVerificationProcedure = async () => {
         error: { code: firebaseError.code, message: firebaseError.message },
       };
     }
-  }else{
-    error{code: "unknown", message: "Une erreur est survenue"}
+  } else {
+    return { error: { code: "unknown", message: "Une erreur est survenue" } };
   }
 };

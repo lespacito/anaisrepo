@@ -23,3 +23,14 @@ const analytics = typeof window !== "undefined" ? getAnalytics(app) : null;
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+const testConnection = async () => {
+  try {
+    await firebase.auth().signInAnonymously();
+    console.log("Connexion Firebase réussie !");
+  } catch (error) {
+    console.error("Erreur de connexion Firebase :", error);
+  }
+};
+
+testConnection();

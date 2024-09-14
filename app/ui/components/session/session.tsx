@@ -1,3 +1,4 @@
+"use client";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { ScreenSpinner } from "../../design-system/spinner/screen-spinner";
 import { useRouter } from "next/navigation";

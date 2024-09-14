@@ -1,17 +1,27 @@
 "use client";
-import { GUEST, REGISTERED } from "@/app/lib/session-status";
+import { useAuth } from "@/app/context/AuthUserContext";
 import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
-import { Layout } from "../layout/Layout";
 import { ActiveLink } from "./Active-link";
-import { useAuth } from "@/app/context/AuthUserContext";
 
 interface Props {}
 
 export const Navbar = ({}: Props) => {
   const { authUser } = useAuth();
-  console.log("authUser", authUser);
+
+  const authentificationSystem = (
+    <div className="flex items-center gap-1">
+      <Button size="small" variant="primary" baseUrl="/connexion">
+        Se connecter
+      </Button>
+      |
+      <Button size="small" variant="secondary" baseUrl="/connexion/inscription">
+        Inscription
+      </Button>
+    </div>
+  );
+
   return (
     <div className="border-background border-b-2">
       <Container className="flex items-center justify-between py-1.5 gap-7">
@@ -36,25 +46,12 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/blog">Blog</ActiveLink>
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
-          <Layout sessionStatus={GUEST}>
-            <div className="flex items-center gap-1">
-              <Button size="small" variant="primary" baseUrl="/connexion">
-                Se connecter
-              </Button>
-              |
-              <Button
-                size="small"
-                variant="secondary"
-                baseUrl="/connexion/inscription"
-              >
-                Inscription
-              </Button>
-            </div>
-          </Layout>
-          <Layout sessionStatus={REGISTERED}>
-            <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
-          </Layout>
         </div>
+        {!authUser ? (
+          authentificationSystem
+        ) : (
+          <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
+        )}
       </Container>
     </div>
   );

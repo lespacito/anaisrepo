@@ -9,7 +9,6 @@ export interface FormsType {
 
 export interface RegisterFormFieldsType {
   email: string;
-  username: string;
   password: string;
   howDidHear: string;
 }

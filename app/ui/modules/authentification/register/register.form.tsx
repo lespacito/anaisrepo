@@ -20,15 +20,6 @@ export const RegisterForm = ({ form }: Props) => {
       />
       <Input
         isLoading={isLoading}
-        placeholder="John Doe"
-        type="text"
-        register={register}
-        errors={errors}
-        errorMsg="Tu dois renseigner ce champ !"
-        id="username"
-      />
-      <Input
-        isLoading={isLoading}
         placeholder="Mot de passe"
         type="password"
         register={register}

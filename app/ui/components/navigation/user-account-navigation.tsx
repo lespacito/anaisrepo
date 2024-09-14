@@ -19,10 +19,10 @@ export const UserAccountNavigation = () => {
     <Box className="flex flex-col gap-7">
       <div className="flex flex-col gap-3">
         <Typography variant="caption2" weight="medium">
-          <ActiveLink href="/mon-compte">Mon compte</ActiveLink>
+          <ActiveLink href="/mon-espace">Mon compte</ActiveLink>
         </Typography>
         <Typography variant="caption2" weight="medium">
-          <ActiveLink href="/mon-compte/mes-projets">Mes projets</ActiveLink>
+          <ActiveLink href="/mon-espace/mes-projets">Mes projets</ActiveLink>
         </Typography>
       </div>
       <Button action={() => handleLogOutUser()} variant="danger">

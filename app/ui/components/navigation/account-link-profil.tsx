@@ -13,7 +13,7 @@ export const AccountNavLinkProfil = () => {
         <Typography variant="caption2" weight="medium" className="truncate">
           {displayName ? displayName : "Bienvenue"}
         </Typography>
-        <Typography variant="caption4" weight="medium" theme="neutral">
+        <Typography variant="caption4" weight="medium" theme="background">
           Mon compte
         </Typography>
       </div>

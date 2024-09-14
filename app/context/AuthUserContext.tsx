@@ -1,3 +1,4 @@
+"use client"
 import useFirebaseAuth from "@/app/hooks/use-firebase-auth";
 import { UserDocument } from "@/app/types/User";
 import { createContext, useContext } from "react";

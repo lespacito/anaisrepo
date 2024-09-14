@@ -15,6 +15,7 @@ interface Props {
 export const Layout = ({
   children,
   withSidebar,
+  sessionStatus,
   isDisplayBreadcrumbs = true,
 }: Props) => {
   let view: React.ReactElement = <></>;

@@ -16,7 +16,7 @@ export const UserAccountContainer = () => {
   return (
     <div className="flex justify-center pt-20 pb-40">
       <Button action={() => handleLogOutUser()} variant="danger">
-        Déconnemion
+        Déconnexion
       </Button>
     </div>
   );

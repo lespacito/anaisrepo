@@ -12,6 +12,7 @@ export const Navbar = ({}: Props) => {
 
   const authentificationSystem =
     (
+      <div className="flex items-center gap-1">
       <Button size="small" variant="primary" baseUrl="/connexion">
         Se connecter
       </Button>
@@ -20,6 +21,7 @@ export const Navbar = ({}: Props) => {
       <Button size="small" variant="secondary" baseUrl="/connexion/inscription">
         Inscription
       </Button>
+      </div>
     );
 
   return (
@@ -47,13 +49,13 @@ export const Navbar = ({}: Props) => {
             <ActiveLink href="/contact">Contactez-moi</ActiveLink>
           </Typography>
         </div>
-        <div className="flex items-center gap-1">
           {!authUser ? (
             authentificationSystem
           ) : (
+            <div className="flex items-center gap-1">
             <ActiveLink href="/mon-espace">Mon espace</ActiveLink>
+            </div>
           )}
-        </div>
       </Container>
     </div>
   );

@@ -4,6 +4,7 @@ import { Button } from "../../design-system/button/Button";
 import { Typography } from "../../design-system/typography/Typography";
 import { Container } from "../container/Container";
 import { Link } from "next/link";
+import { ActiveLink } from "./Active-link";
 
 interface Props {}
 
@@ -51,7 +52,9 @@ export const Navbar = ({}: Props) => {
           authentificationSystem
         ) : (
           <>
-            <Link href="/mon-espace" className="flex items-center gap-2">Mon espace</Link>
+            <Link href="/mon-espace" className="flex items-center gap-2">
+              Mon espace
+            </Link>
           </>
         )}
       </Container>

@@ -53,7 +53,7 @@ export const firebaseLogOutUser = async () => {
 
 export const sendEmailResetPassword = async (email: string) => {
   try {
-    const userCredential = await sendPasswordResetEmail(auth, email);
+    await sendPasswordResetEmail(auth, email);
     return { data: true };
   } catch (error) {
     const firebaseError = error as FirebaseError;

@@ -9,7 +9,11 @@ interface Props {
   withSidebar?: boolean;
 }
 
-export const Layout = ({ children,, withSidebar, isDisplayBreadcrumbs = true }: Props) => {
+export const Layout = ({
+  children,
+  withSidebar,
+  isDisplayBreadcrumbs = true,
+}: Props) => {
   let view: React.ReactElement = <></>;
 
   if (withSidebar) {

@@ -18,7 +18,6 @@ export const RegisterContainer = () => {
 
   const handleCreateUserAuthentification = async ({
     email,
-    username,
     password,
     howDidHear,
   }: RegisterFormFieldsType) => {

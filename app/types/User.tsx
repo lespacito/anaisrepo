@@ -1,6 +1,5 @@
 import { Timestamp } from "firebase/firestore";
 export interface UserInterface {
-  
   uid: string;
   email: string | null;
   displayName: string | null;
@@ -14,4 +13,5 @@ export interface UserDocument {
   email: string;
   howDidHear: string;
   creationDate: Timestamp;
+  onboardingIsCompleted: boolean;
 }

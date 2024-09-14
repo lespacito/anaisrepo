@@ -1,9 +1,9 @@
 "use client";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { ScreenSpinner } from "../../design-system/spinner/screen-spinner";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { SessionStatusTyype } from "@/app/types/SessionStatusTypes";
-import { REGISTERED, GUEST, ADMIN } from "@/app/lib/session-status";
+import { REGISTERED, GUEST } from "@/app/lib/session-status";
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +12,38 @@ interface Props {
 
 export const Session = ({ children, sessionStatus }: Props) => {
   const router = useRouter();
+  const pathname = usePathname();
   const { authUserIsLoading, authUser } = useAuth();
+
+  const onboardingIsCompleted = authUser?.userDocument?.onboardingIsCompleted;
+
+  const shouldRedirectToOnboarding = () => {
+    return (
+      !authUserIsLoading &&
+      authUser &&
+      !onboardingIsCompleted &&
+      pathname !== "/onboarding"
+    );
+  };
+
+  const shouldNotRedirectToOnboarding = () => {
+    return (
+      !authUserIsLoading &&
+      authUser &&
+      onboardingIsCompleted &&
+      pathname === "/onboarding"
+    );
+  };
+
+  if (shouldRedirectToOnboarding()) {
+    router.push("/onboarding");
+    return <ScreenSpinner />;
+  }
+
+  if (shouldNotRedirectToOnboarding()) {
+    router.push("/mon-espace");
+    return <ScreenSpinner />;
+  }
 
   if (sessionStatus === GUEST && !authUserIsLoading) {
     if (!authUser) {
@@ -23,14 +54,6 @@ export const Session = ({ children, sessionStatus }: Props) => {
   }
 
   if (sessionStatus === REGISTERED && !authUserIsLoading) {
-    if (authUser) {
-      return <>{children}</>;
-    } else {
-      router.push("/connexion");
-    }
-  }
-
-  if (sessionStatus === ADMIN && !authUserIsLoading) {
     if (authUser) {
       return <>{children}</>;
     } else {

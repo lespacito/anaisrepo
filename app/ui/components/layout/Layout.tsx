@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Layout = ({ children, isDisplayBreadcrumbs = true }: Props) => {
-  let view: React.ReactElement = <></>;
+  let view: React.ReactElement = <div></div>;
 
   if (withSidebar) {
     view = (
@@ -24,7 +24,7 @@ export const Layout = ({ children, isDisplayBreadcrumbs = true }: Props) => {
       </Container>
     );
   } else {
-    view = <>{children}</>;
+    view = { children };
   }
 
   return (

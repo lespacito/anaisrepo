@@ -36,7 +36,7 @@ export const Session = ({ children, sessionStatus }: Props) => {
   };
 
   if (shouldRedirectToOnboarding()) {
-    router.push("/onboarding");
+    router.push("/mon-espace/onboarding");
     return <ScreenSpinner />;
   }
 

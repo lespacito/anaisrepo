@@ -1,3 +1,4 @@
+"use client";
 import { OnBoardingView } from "./onboarding.view";
 import { useState } from "react";
 

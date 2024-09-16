@@ -1,7 +1,30 @@
-export const OnBoardingView = () => {
-  return (
-    <div className="flex items-center justify-center mb-40 mt-20">
-      Hello tout le monde
-    </div>
-  );
+"use client"
+import { BaseComponentProps } from "@/app/types/onboarding/onboarding-steps-list";
+
+export const OnBoardingView = ({
+  nextStep,
+  prevStep,
+  isFirstStep,
+  isFinalStep,
+  getCurrentStep,
+  stepsList,
+}: BaseComponentProps) => {
+  if (getCurrentStep()?.component) {
+    const Component = getCurrentStep()?.component.step;
+    return (
+      <div className="">
+        {Component && (
+          <Component
+            nextStep={nextStep}
+            prevStep={prevStep}
+            isFirstStep={isFirstStep}
+            isFinalStep={isFinalStep}
+            getCurrentStep={getCurrentStep}
+            stepsList={stepsList}
+          />
+        )}
+      </div>
+    );
+  }
+  return null;
 };

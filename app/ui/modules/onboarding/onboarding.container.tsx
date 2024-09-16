@@ -1,20 +1,23 @@
-"use client";
+"use client"
+import { onboardingStepListInterface } from "@/app/types/onboarding/onboarding-steps-list";
+import { WelcomeStep } from "./components/steps/welcome-step/welcome-step";
 import { OnBoardingView } from "./onboarding.view";
 import { useState } from "react";
+import { ProfileStep } from "./components/steps/profile-step/profile-step";
 
 export const OnBoardingContainer = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
 
-  const stepsList = [
+  const stepsList: onboardingStepListInterface[] = [
     {
       id: 1,
       label: "Bienvenue",
-      component: { step: <div>Step Welcome</div> },
+      component: { step: WelcomeStep },
     },
     {
       id: 2,
       label: "Profile",
-      component: { step: <div>Step profile</div> },
+      component: { step: ProfileStep },
     },
   ];
 
@@ -22,7 +25,42 @@ export const OnBoardingContainer = () => {
     return stepsList.find((el) => el.id === currentStep);
   };
 
-  console.log("getCurrentStep", getCurrentStep());
+  console.log("currentStep", currentStep);
 
-  return <OnBoardingView />;
+  const nextStep = () => {
+    if (currentStep < stepsList.length) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  const isFirstStep = () => {
+    if (currentStep === 1) {
+      return true;
+    }
+    return false;
+  };
+
+  const isFinalStep = () => {
+    if (currentStep === stepsList.length) {
+      return true;
+    }
+    return false;
+  };
+
+  return (
+    <OnBoardingView
+      getCurrentStep={getCurrentStep}
+      nextStep={nextStep}
+      prevStep={prevStep}
+      isFirstStep={isFirstStep}
+      isFinalStep={isFinalStep}
+      stepsList={stepsList}
+    />
+  );
 };

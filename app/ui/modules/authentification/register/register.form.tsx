@@ -1,6 +1,7 @@
 import { FormsType } from "@/app/types/Forms";
 import { Button } from "@/app/ui/design-system/button/Button";
 import { Input } from "@/app/ui/design-system/forms/input";
+import { Select } from "@/app/ui/design-system/forms/select";
 
 interface Props {
   form: FormsType;
@@ -27,10 +28,10 @@ export const RegisterForm = ({ form }: Props) => {
         errorMsg="Tu dois renseigner ce champ !"
         id="password"
       />
-      <Input
+      <Select
         isLoading={isLoading}
         placeholder="Comment nous as-tu connus ?"
-        type="text"
+        options={["Internet", "Youtube", "Bouch à oreille", "Connaissance"]}
         register={register}
         errors={errors}
         errorMsg="Tu dois renseigner ce champ !"

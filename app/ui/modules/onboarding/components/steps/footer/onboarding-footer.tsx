@@ -4,6 +4,7 @@ import clsx from "clsx";
 interface Props {
   nextStep?: () => void;
   prevStep?: () => void;
+  finalStep?: () => void;
   isFirstStep?: () => boolean;
   isFinalStep?: () => boolean;
   isLoading?: boolean;

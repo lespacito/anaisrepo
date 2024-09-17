@@ -11,7 +11,10 @@ export interface UserInterface {
 export interface UserDocument {
   uid: string;
   email: string;
+  displayName: string;
   howDidHear: string;
+  bio: string;
+  favoritepass: string;
   creationDate: Timestamp;
   onboardingIsCompleted: boolean;
 }

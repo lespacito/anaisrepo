@@ -15,15 +15,14 @@ export const HeroTopView = () => {
         </Typography>
         <div className="space-x-5 p-2">
           <Button baseUrl="/blog">Découvrir le blog</Button>
+          <Image
+            src={"/assets/img/karting.png"}
+            alt="accueil"
+            width={811}
+            height={596}
+          />
         </div>
       </div>
-      <Image
-        src="/assets/img/karting.png"
-        width={811}
-        height={596}
-        className="absolute top-0 right-0 z-0"
-        alt="Image de karting hero-top"
-      />
     </Container>
   );
 };

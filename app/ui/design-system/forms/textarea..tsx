@@ -1,31 +1,29 @@
 import clsx from "clsx";
 import { Typography } from "../typography/Typography";
 
-interface Props {
+interface TextareaProps {
   isLoading: boolean;
-  placeholder?: string;
-  label?: string | null; // Le label peut être null ou non fourni
-  type?: "text" | "email" | "password";
+  placeholder?: string; // Placeholder peut être optionnel
+  label?: string | null; // Label peut être optionnel ou null
   register: any;
   errors: any;
   errorMsg: string;
   id: string;
   required?: boolean;
-  isAutoCompleted?: boolean;
+  rows?: number; // 5 lignes par défaut
 }
 
-export const Input = ({
+export const Textarea = ({
   isLoading,
   placeholder,
-  label = null, // par défaut null si non fourni
-  type = "text",
+  label = null, // Par défaut null si non fourni
   register,
   errors,
   errorMsg = "Tu dois renseigner ce champ !",
   id,
   required = true,
-  isAutoCompleted = false,
-}: Props) => {
+  rows = 5,
+}: TextareaProps) => {
   return (
     <div className="space-y-2">
       {label && (
@@ -37,9 +35,9 @@ export const Input = ({
           {label}
         </Typography>
       )}
-      <input
-        type={type}
+      <textarea
         placeholder={placeholder}
+        rows={rows}
         className={clsx(
           isLoading
             ? "bg-disabled focus:ring-disabled cursor-not-allowed"
@@ -47,7 +45,7 @@ export const Input = ({
           errors[id]
             ? "placeholder-alert-danger text-alert-danger"
             : "placeholder-gray",
-          "w-full p-4 font-light border border-gray rounded focus:outline-none focus:ring-1 focus:ring-primary"
+          "w-full p-4 font-light border border-gray rounded focus:outline-none focus:ring-1 focus:ring-primary resize-none"
         )}
         disabled={isLoading}
         {...register(id, {
@@ -56,7 +54,6 @@ export const Input = ({
             message: errorMsg,
           },
         })}
-        autoComplete={isAutoCompleted ? "on" : "off"}
       />
       {errors[id] && (
         <Typography variant="caption3" component="div" theme="danger">

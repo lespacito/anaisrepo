@@ -1,17 +1,16 @@
-"use client";
-import { BaseComponentProps } from "@/app/types/onboarding/onboarding-steps-list";
+import React from "react";
 import { OnboardingFooter } from "../footer/onboarding-footer";
 import { Typography } from "@/app/ui/design-system/typography/Typography";
-import { Container } from "@/app/ui/components/container/Container";
-import Image from "next/image";
 import OnboardingTabs from "../../tabs/onboarding-tabs";
+import { Container } from "@/app/ui/components/container/Container";
+import { BaseComponentProps } from "@/app/types/onboarding/onboarding-steps-list";
+import Image from "next/image";
 
-export const WelcomeStep = ({
-  nextStep,
-  isFirstStep,
+export default function OnboardingFinishStep({
+  isFinalStep,
   stepsList,
   getCurrentStep,
-}: BaseComponentProps) => {
+}: BaseComponentProps) {
   return (
     <div className="relative h-screen pb-[91px]">
       <div className="h-full overflow-auto">
@@ -53,7 +52,7 @@ export const WelcomeStep = ({
           </div>
         </Container>
       </div>
-      <OnboardingFooter nextStep={nextStep} isFirstStep={isFirstStep} />
+      <OnboardingFooter isFinalStep={isFinalStep} />
     </div>
   );
-};
+}

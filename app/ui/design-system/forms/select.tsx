@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import { Typography } from "../typography/Typography";
 
-interface Props {
+interface SelectProps {
   isLoading: boolean;
-  placeholder?: string;
-  label?: string | null; // Le label peut être null ou non fourni
-  type?: "text" | "email" | "password";
+  placeholder: string;
+  options: string[];
   register: any;
   errors: any;
   errorMsg: string;
@@ -14,32 +13,20 @@ interface Props {
   isAutoCompleted?: boolean;
 }
 
-export const Input = ({
+export const Select = ({
   isLoading,
   placeholder,
-  label = null, // par défaut null si non fourni
-  type = "text",
+  options,
   register,
   errors,
   errorMsg = "Tu dois renseigner ce champ !",
   id,
   required = true,
   isAutoCompleted = false,
-}: Props) => {
+}: SelectProps) => {
   return (
     <div className="space-y-2">
-      {label && (
-        <Typography
-          variant="caption3"
-          component="div"
-          theme={errors[id] ? "danger" : "secondary"}
-        >
-          {label}
-        </Typography>
-      )}
-      <input
-        type={type}
-        placeholder={placeholder}
+      <select
         className={clsx(
           isLoading
             ? "bg-disabled focus:ring-disabled cursor-not-allowed"
@@ -57,7 +44,15 @@ export const Input = ({
           },
         })}
         autoComplete={isAutoCompleted ? "on" : "off"}
-      />
+      >
+        <option value="">{placeholder}</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+
       {errors[id] && (
         <Typography variant="caption3" component="div" theme="danger">
           {errors[id]?.message}

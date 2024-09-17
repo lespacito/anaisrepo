@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import { onboardingStepListInterface } from "@/app/types/onboarding/onboarding-steps-list";
 import { WelcomeStep } from "./components/steps/welcome-step/welcome-step";
 import { OnBoardingView } from "./onboarding.view";
 import { useState } from "react";
 import { ProfileStep } from "./components/steps/profile-step/profile-step";
+import OnboardingFinishStep from "./components/steps/finish-step/finish-step";
 
 export const OnBoardingContainer = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -16,16 +17,19 @@ export const OnBoardingContainer = () => {
     },
     {
       id: 2,
-      label: "Profile",
+      label: "Ton profil",
       component: { step: ProfileStep },
+    },
+    {
+      id: 3,
+      label: "Félicitations",
+      component: { step: OnboardingFinishStep },
     },
   ];
 
   const getCurrentStep = () => {
     return stepsList.find((el) => el.id === currentStep);
   };
-
-  console.log("currentStep", currentStep);
 
   const nextStep = () => {
     if (currentStep < stepsList.length) {

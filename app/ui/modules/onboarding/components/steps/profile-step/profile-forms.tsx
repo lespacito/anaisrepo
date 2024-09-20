@@ -21,13 +21,14 @@ export default function ProfileStepForm({ form }: Props) {
         id="displayName"
         required={true}
       />
-      <Select
+      <Input
         isLoading={isLoading}
-        placeholder="Sélectionne ta passion favorite"
-        options={["Photographie", "Voyage", "Cuisine", "Art", "Musique"]}
+        label="Passion favorite :"
+        placeholder="Informatique"
+        type="text"
         register={register}
         errors={errors}
-        errorMsg="Tu dois sélectionner une passion !"
+        errorMsg="Indique ta passion favorite !"
         id="favoritepass"
         required={true}
       />

@@ -27,3 +27,9 @@ export interface OnboardingProfileFormFIelds {
   bio: string;
   favoritepass: string;
 }
+
+export interface UploadPostFormFieldsType {
+  titre: string;
+  content: string;
+  imageUrl: string;
+}

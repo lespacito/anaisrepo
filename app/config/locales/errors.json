@@ -1,0 +1,43 @@
+{
+
+  "unknown_error": "Une erreur est survenue, si le problème persiste contactez-nous.",
+
+  "signInWithEmailAndPassword": {
+"auth/claims-too-large ":	"La charge utile des revendications fournie à setCustomUserClaims() dépasse la taille maximale autorisée de 1 000 octets.",
+"auth/email-already-exists": 	"L'adresse e-mail fournie est déjà utilisée par un utilisateur. Chaque utilisateur doit n'ont qu'une seule adresse e-mail.",
+
+"auth/internal-error": 	"Le serveur Authentication a rencontré une erreur inattendue lors du traitement de la requête. Le message d'erreur doit contenir la réponse de le serveur Authentication contenant des informations supplémentaires. Si l'erreur le problème persiste, veuillez le signaler à notre Canal d'assistance Rapport de bug.",
+"auth/invalid-argument": "Un argument non valide a été fourni à une méthode Authentication. Le message d'erreur doit contenir des informations supplémentaires.",
+"auth/invalid-credential": 	"Les identifiants indiqués ne sont pas valides",
+"auth/invalid-disabled-field": 	"La valeur fournie pour la propriété utilisateur disabled est non valide. Il doit s'agir d'une valeur booléenne.",
+"auth/invalid-display-name": 	"La valeur fournie pour la propriété utilisateur displayName est non valide. Il doit s'agir d'une chaîne non vide.",
+"auth/invalid-email": "La valeur fournie pour la propriété utilisateur email n'est pas valide. Il doit s'agir d'une chaîne d'adresse e-mail.",
+"auth/invalid-email-verified": 	"La valeur fournie pour la propriété utilisateur emailVerified est non valide. Il doit s'agir d'une valeur booléenne.",
+"auth/invalid-password": "La valeur fournie pour la propriété utilisateur password n'est pas valide. Il doit s'agir d'une chaîne d'au moins six caractères.",
+"auth/user-not-found ":	"Il n'existe aucun enregistrement d'utilisateur correspondant à l'identifiant fourni. "
+},
+
+  "database": {
+    "database/permission-denied": "L'utilisateur n'a pas la permission d'accéder à la base de données.",
+    "database/disconnected": "La connexion à la base de données a été perdue.",
+    "database/timeout": "L'opération a expiré.",
+    "database/invalid-path": "Le chemin de la base de données fourni est invalide."
+  },
+  "firestore": {
+    "firestore/permission-denied": "L'utilisateur n'a pas la permission d'accéder à Firestore.",
+    "firestore/unavailable": "Le service Firestore est temporairement indisponible.",
+    "firestore/aborted": "L'opération a été annulée.",
+    "firestore/invalid-argument": "Un argument invalide a été fourni."
+  },
+  "storage": {
+    "storage/unauthorized": "L'utilisateur n'a pas la permission d'accéder à l'objet.",
+    "storage/canceled": "L'opération a été annulée.",
+    "storage/invalid-url": "L'URL est invalide.",
+    "storage/retry-limit-exceeded": "L'opération a été réessayée trop de fois."
+  },
+  "functions": {
+    "functions/invalid-argument": "Argument invalide fourni à une fonction.",
+    "functions/failed-precondition": "L'opération a été rejetée car le système n'est pas dans un état requis pour l'exécution de l'opération.",
+    "functions/unavailable": "Le service Cloud Functions est temporairement indisponible."
+  }
+}

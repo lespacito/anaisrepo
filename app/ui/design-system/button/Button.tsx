@@ -1,5 +1,6 @@
 "use client";
-import { IconType } from "react-icons"; // Assurez-vous que l'icône provient de react-icons
+
+import { IconType } from "react-icons";
 import clsx from "clsx";
 import { Spinner } from "../spinner/spinner";
 import { linkTypes } from "@/app/lib/link-type";
@@ -28,7 +29,7 @@ interface Props {
   children?: React.ReactNode;
   baseUrl?: string;
   linkType?: linkTypes;
-  action?: Function;
+  action?: () => void; // Typage pour la fonction `action`
   type?: "button" | "submit";
   fullWidth?: boolean;
 }
@@ -44,13 +45,13 @@ export const Button = ({
   children,
   baseUrl,
   linkType = "internal",
-  action = () => {},
+  action = () => {}, // Valeur par défaut pour `action`
   type = "button",
   fullWidth = false,
 }: Props) => {
-  let variantStyles: string = "",
-    sizeStyles: string = "",
-    icoSize: number = 0;
+  let variantStyles = "",
+    sizeStyles = "",
+    icoSize = 0;
 
   // Définition des styles selon la variante du bouton
   switch (variant) {
@@ -115,7 +116,7 @@ export const Button = ({
   }
 
   const handleClick = () => {
-    if (action) {
+    if (action && !disabled && !isLoading) {
       action();
     }
   };
@@ -133,7 +134,7 @@ export const Button = ({
       )}
       <div className={clsx(isLoading && "invisible")}>
         {icon && variant === "ico" ? (
-          <icon.icon size={icoSize} /> // Affiche l'icône avec la taille appropriée
+          <icon.icon size={icoSize} />
         ) : (
           <div className={clsx(icon && "flex items-center gap-1")}>
             {icon && iconPosition === "left" && <icon.icon size={icoSize} />}
@@ -155,7 +156,7 @@ export const Button = ({
         fullWidth && "w-full",
         "relative animate"
       )}
-      onClick={handleClick}
+      onClick={handleClick} // Déclenchement de l'action au clic
       disabled={disabled || isLoading}
     >
       {buttonContent}
@@ -165,7 +166,7 @@ export const Button = ({
   if (baseUrl) {
     if (linkType === linkTypes.EXTERNAL) {
       return (
-        <a href={baseUrl} target="_blank">
+        <a href={baseUrl} target="_blank" rel="noopener noreferrer">
           {buttonElement}
         </a>
       );
@@ -173,5 +174,6 @@ export const Button = ({
       return <ActiveLink href={baseUrl}>{buttonElement}</ActiveLink>;
     }
   }
+
   return buttonElement;
 };

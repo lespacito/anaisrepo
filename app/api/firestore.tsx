@@ -2,7 +2,7 @@ import { doc, updateDoc, setDoc } from "firebase/firestore";
 import { db } from "@/app/config/firebase-config";
 import { FirebaseError } from "firebase/app";
 
-export const firestoreCreateeDocument = async (
+export const firestoreCreateDocument = async (
   collectionName: string,
   documentID: string,
   data: object

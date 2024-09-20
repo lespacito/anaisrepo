@@ -12,6 +12,7 @@ import { firestoreUpdateDocument } from "@/app/api/firestore";
 import { useAuth } from "@/app/context/AuthUserContext";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import { updateUserIdentificationData } from "@/app/api/authentication";
 export const ProfileStep = ({
   prevStep,
   nextStep,
@@ -20,6 +21,7 @@ export const ProfileStep = ({
   getCurrentStep,
 }: BaseComponentProps) => {
   const { authUser } = useAuth();
+  console.log("AuthUser", authUser);
   const { value: isLoading, setValue: setLoading } = useToggle();
   const {
     handleSubmit,
@@ -47,7 +49,6 @@ export const ProfileStep = ({
   const handleUpdateUserDocument = async (
     formData: OnboardingProfileFormFIelds
   ) => {
-    console.log("use API")
     const { error } = await firestoreUpdateDocument(
       "users",
       authUser.uid,
@@ -74,9 +75,31 @@ export const ProfileStep = ({
       favoritepass !== formData.favoritepass ||
       bio !== formData.bio
     ) {
+      // ...
+
+      if (
+        displayName !== formData.displayName ||
+        authUser.displayName !== formData.displayName
+      ) {
+        const data = {
+          displayName: formData.displayName,
+        };
+        // Use function...
+        const { error } = await updateUserIdentificationData(
+          authUser.uid,
+          data
+        );
+        if (error) {
+          setLoading(false);
+          toast.error(error.message);
+          return;
+        }
+      }
       handleUpdateUserDocument(formData);
     }
-    nextStep()
+    setLoading(false);
+    nextStep();
+    toast.success("Informations mis à jour");
   };
 
   return (
@@ -90,7 +113,7 @@ export const ProfileStep = ({
                 getCurrentStep={getCurrentStep}
               />
               <Typography variant="h2" component="h1">
-                Compléte ici ton profil !
+                Complète ici ton profil !
               </Typography>
               <Typography variant="body-base" component="p" theme="secondary">
                 Bienvenue dans notre communauté de passionnés ! Maintenant,
@@ -100,16 +123,18 @@ export const ProfileStep = ({
             </div>
           </div>
           <div className="flex items-center h-full col-span-6">
-            <ProfileStepForm
-              form={{
-                errors,
-                control,
-                register,
-                handleSubmit,
-                onSubmit,
-                isLoading,
-              }}
-            />
+            <div className="flex justify-end w-full">
+              <ProfileStepForm
+                form={{
+                  errors,
+                  control,
+                  register,
+                  handleSubmit,
+                  onSubmit,
+                  isLoading,
+                }}
+              />
+            </div>
           </div>
         </Container>
       </div>

@@ -4,6 +4,7 @@ import { WelcomeStep } from "./components/steps/welcome-step/welcome-step";
 import { OnBoardingView } from "./onboarding.view";
 import { useState } from "react";
 import { ProfileStep } from "./components/steps/profile-step/profile-step";
+import { BlogStep } from "./components/steps/blog-step/blog-step";
 import OnboardingFinishStep from "./components/steps/finish-step/finish-step";
 
 export const OnBoardingContainer = () => {
@@ -22,6 +23,11 @@ export const OnBoardingContainer = () => {
     },
     {
       id: 3,
+      label: "Blog",
+      component: { step: BlogStep },
+    },
+    {
+      id: 4,
       label: "Félicitations",
       component: { step: OnboardingFinishStep },
     },

@@ -42,7 +42,7 @@ export const WelcomeStep = ({
             </div>
           </div>
           <div className="flex items-center h-full col-span-6">
-            <div className="w-full">
+          <div className="flex justify-end w-full">
               <Image
                 src={"/assets/img/karting.png"}
                 alt="accueil"

@@ -42,9 +42,8 @@ export const BlogStep = ({
   const [selectedImage, setSelectedImage] = useState<File | undefined>(
     undefined
   );
-  const [imagePreview, setImagePreview] = useState<string | undefined>(
-    undefined
-  );
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
   const [uploadProgress, setUploadProgress] = useState<number>(0);
 
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,7 +52,7 @@ export const BlogStep = ({
       setSelectedImage(file);
       const reader = new FileReader();
       reader.onload = (e) => {
-        const imgDataUrl = e.target?.result?.toString();
+        const imgDataUrl = e.target?.result?.toString() as string;
         setImagePreview(imgDataUrl);
       };
       reader.readAsDataURL(file);

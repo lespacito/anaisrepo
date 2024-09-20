@@ -42,7 +42,9 @@ export const BlogStep = ({
   const [selectedImage, setSelectedImage] = useState<File | undefined>(
     undefined
   );
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | ArrayBuffer | null>(
+    null
+  );
 
   const [uploadProgress, setUploadProgress] = useState<number>(0);
 

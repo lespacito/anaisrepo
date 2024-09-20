@@ -13,14 +13,8 @@ import { toast } from "react-toastify";
 import { firestoreCreateDocument } from "@/app/api/firestore"; // Correction ici
 import { UploadImgPosts } from "@/app/ui/components/uploadImgPost/uploadImg-post";
 import { useState } from "react";
-import {
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-  UploadTask,
-} from "firebase/storage";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "@/app/config/firebase-config";
-import { Button } from "@/app/ui/design-system/button/Button";
 
 export const BlogStep = ({
   prevStep,

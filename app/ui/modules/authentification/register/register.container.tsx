@@ -6,7 +6,7 @@ import {
   firebaseCreateUser,
   sendEmailVerificationProcedure,
 } from "@/app/api/authentication";
-import { firestoreCreateeDocument } from "@/app/api/firestore";
+import { firestoreCreateDocument } from "@/app/api/firestore";
 import { toast } from "react-toastify";
 import { useToggle } from "@/app/hooks/use-toggle";
 
@@ -25,7 +25,7 @@ export const RegisterContainer = () => {
     documentID: string,
     document: object
   ) => {
-    const { error } = await firestoreCreateeDocument(
+    const { error } = await firestoreCreateDocument(
       collectionName,
       documentID,
       document

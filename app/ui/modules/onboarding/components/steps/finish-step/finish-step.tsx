@@ -25,7 +25,11 @@ export default function OnboardingFinishStep({
 
     const data = { onboardingIsCompleted: true };
 
-    const { error } = await firestoreUpdateDocument("users", authUser.uid, data);
+    const { error } = await firestoreUpdateDocument(
+      "users",
+      authUser.uid,
+      data
+    );
 
     if (error) {
       toggle();
@@ -52,22 +56,22 @@ export default function OnboardingFinishStep({
     <>
       {showConfetti && (
         <Confetti
-        drawShape={ctx => {
-          ctx.beginPath()
-          for(let i = 0; i < 22; i++) {
-            const angle = 0.35 * i
-            const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
-            const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
-            ctx.lineTo(x, y)
-          }
-          ctx.stroke()
-          ctx.closePath()
-        }}
+          drawShape={(ctx) => {
+            ctx.beginPath();
+            for (let i = 0; i < 22; i++) {
+              const angle = 0.35 * i;
+              const x = (0.2 + 1.5 * angle) * Math.cos(angle);
+              const y = (0.2 + 1.5 * angle) * Math.sin(angle);
+              ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.closePath();
+          }}
           recycle={false}
           numberOfPieces={500}
           gravity={0.3}
           initialVelocityX={4}
-          initaLVelocityY={10}
+          initialVelocityY={10}
         />
       )}
 
